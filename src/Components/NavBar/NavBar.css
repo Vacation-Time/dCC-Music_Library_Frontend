@@ -1,1 +1,12 @@
+.navbar-background {
+    background-color: rgb(31, 29, 29);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    align-items: center;
+  }
+  
 
+  .header {
+    color: rgb(189, 101, 20); 
+  }
+  

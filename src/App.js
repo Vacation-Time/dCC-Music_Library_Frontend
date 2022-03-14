@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import CreateSong from './Components/CreateSong/CreateSong';
-import DisplaySongs from './Components/DisplaySongs/DisplaySongs';
-import NavBar from './Components/NavBar/NavBar';
+import CreateSong from './Components/CreateSong/CreateSong.jsx'
+import DisplaySongs from './Components/DisplaySong/DisplaySong.jsx';
+import NavBar from './Components/NavBar/NavBar.jsx';
 import './App.css';
 import axios from 'axios';
 
 
 function App() {
 
-  const [songs, setSongs] = useState([]);
+  const [songs, setSongs] = useState([]); // where data is stored
 
   useEffect(() => {
     getAllSongs();
@@ -17,29 +17,29 @@ function App() {
   })
 
   async function getAllSongs(){
-    let response = await axios.get('http://127.0.0.1:8000/music/');
+    let response = await axios.get('http://127.0.0.1:8000/api/music/');
     setSongs(response.data);
     console.log(response.data); // to view in console for testing
   } 
 
-  async function createSong(newSong){
-    let response = await axios.post('http://127.0.0.1:8000/music/', newSong);
+  async function createSong(newSong){ 
+    let response = await axios.post('http://127.0.0.1:8000/api/music/', newSong);
     console.log(response.data); // to view in console for testing
-    if(response.data === 201){
-    await getAllSongs();
-  }
+    //await getAllSongs();
+  
   }
   
   async function updateSong(songData, songId){
-    let response = await axios.post(`http://127.0.0.1:8000/music/${songId}`, songData);
+    let response = await axios.put(`http://127.0.0.1:8000/api/music/${songId}`, songData);
     console.log(response.data); // to view in console for testing
+    //await getAllSongs();
   }
 
 
   return (
     <div>
       <div><NavBar/></div>
-      <div><DisplaySongs displaySongs={songs}/></div> 
+      <div><DisplaySongs displaySong={songs}/></div> 
       <div><CreateSong addNewSong={createSong}/></div>
     </div>
   );
