@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import CreateSong from './Components/CreateSong/CreateSong';
+import DisplaySongs from './Components/DisplaySongs/DisplaySongs';
+import NavBar from './Components/NavBar/NavBar';
 import './App.css';
+import axios from 'axios';
+
 
 function App() {
+
+  const [songs, setSongs] = useState([]);
+
+  useEffect(() => {
+    getAllSongs();
+    createSong();
+    updateSong();
+  })
+
+  async function getAllSongs(){
+    let response = await axios.get('http://127.0.0.1:8000/music/');
+    setSongs(response.data);
+    console.log(response.data); // to view in console for testing
+  } 
+
+  async function createSong(newSong){
+    let response = await axios.post('http://127.0.0.1:8000/music/', newSong);
+    console.log(response.data); // to view in console for testing
+    if(response.data === 201){
+    await getAllSongs();
+  }
+  }
+  
+  async function updateSong(songData, songId){
+    let response = await axios.post(`http://127.0.0.1:8000/music/${songId}`, songData);
+    console.log(response.data); // to view in console for testing
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div><NavBar/></div>
+      <div><DisplaySongs displaySongs={songs}/></div> 
+      <div><CreateSong addNewSong={createSong}/></div>
     </div>
   );
 }
