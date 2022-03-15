@@ -31,9 +31,7 @@ function App() {
   
   async function deleteSong(song){
     let response = await axios.delete(`http://127.0.0.1:8000/api/music/${song.id}/`);
-   if(response.status === 200){
     await getAllSongs();
-  }
   }
 
 

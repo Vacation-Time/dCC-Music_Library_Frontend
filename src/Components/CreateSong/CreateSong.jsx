@@ -40,24 +40,24 @@ const CreateSong = (props) => {
             <form onSubmit = {handleSubmit}>
                 <div className='form-contain'>
                     <div>
-                        <label className='form-label' htmlFor = 'Title'></label>
-                        <input type = 'text' id = 'Title' placeholder = 'Title:' value={songTitle} onChange={(event) => setTitle(event.target.value)}/> 
+                        <label htmlFor = 'Title'></label>
+                        <input className='text-box' type = 'text' id = 'Title' placeholder = 'Title:' value={songTitle} onChange={(event) => setTitle(event.target.value)}/> 
                     </div>
                     <div>
-                        <label className='form-label' htmlFor = 'Artist'></label>
-                        <input type = 'text' id = 'Artist' placeholder = 'Artist:' value = {songArtist} onChange={(event) => setArtist(event.target.value)}/>
+                        <label htmlFor = 'Artist'></label>
+                        <input className='text-box' type = 'text' id = 'Artist' placeholder = 'Artist:' value = {songArtist} onChange={(event) => setArtist(event.target.value)}/>
                     </div>
                     <div>
-                        <label className='form-label' htmlFor = 'Album'></label>
-                        <input type = 'text' id = 'Album' placeholder = 'Album:' value={songAlbum} onChange={(event) => setAlbum(event.target.value)}/> 
+                        <label htmlFor = 'Album'></label>
+                        <input className='text-box' type = 'text' id = 'Album' placeholder = 'Album:' value={songAlbum} onChange={(event) => setAlbum(event.target.value)}/> 
                     </div>
                     <div>
-                        <label className='form-label' htmlFor = 'Genre'></label>
-                        <input type = 'text' id = 'Genre' placeholder = 'Genre:' value = {songGenre} onChange={(event) => setGenre(event.target.value)}/>
+                        <label htmlFor = 'Genre'></label>
+                        <input className='text-box' type = 'text' id = 'Genre' placeholder = 'Genre:' value = {songGenre} onChange={(event) => setGenre(event.target.value)}/>
                     </div>
                     <div>
-                        <label className='form-label' htmlFor = 'Release'></label>
-                        <input type = 'date' id = 'Release' placeholder = 'Release Date' value = {releaseDate} onChange={(event) => setReleaseDate(event.target.value)}/>
+                        <label htmlFor = 'Release'></label>
+                        <input className='text-box' type = 'date' id = 'Release' placeholder = 'Release Date' value = {releaseDate} onChange={(event) => setReleaseDate(event.target.value)}/>
                     </div>
 
 

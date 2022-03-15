@@ -1,5 +1,5 @@
 .navbar-background {
-    background-color: rgb(31, 29, 29);
+    background-color: rgb(43, 43, 53);
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     align-items: center;
@@ -10,6 +10,6 @@
     color: rgb(189, 101, 20); 
     align-items: center;
     display: flex;
-    margin-left: 30rem;
+    margin-left: 45rem;
   }
   

@@ -1,6 +1,6 @@
 .display-container {
     display: flex;
-    max-width: 1375px;
+    max-width: 1200px;
     margin: auto;
     flex-direction: column;
   }
@@ -31,7 +31,7 @@
   
   .search-label {
     font-weight: bold;
-    padding-right: 0.5rem;
+    padding-right: .5rem;
 
   }
   
