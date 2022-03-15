@@ -1,0 +1,80 @@
+.display-container {
+    display: flex;
+    max-width: 1375px;
+    margin: auto;
+    flex-direction: column;
+  }
+  
+  .table-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .list-contain {
+    margin-right: auto;
+    padding-left: 0.3rem;
+  }
+  
+  .list-title {
+    margin-top: 3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    margin-left: 15rem;
+    text-shadow: 1rem;
+    text-shadow:rgb(112, 23, 23)
+  }
+  
+  .search-filter {
+    margin-top: 3rem;
+  }
+  
+  .search-label {
+    font-weight: bold;
+    padding-right: 0.5rem;
+
+  }
+  
+  .custom-input {
+    width: 300px;
+    height: 30px;
+    padding-left: 5px;
+    border-radius: 7px;
+    margin-right: 100px;
+  }
+  
+  .song-table tr,
+  td,
+  th {
+    border: 2px solid;
+  }
+  
+  .header-row {
+    color: rgb(3, 17, 17);
+    background-color: rgb(69, 142, 160);
+    padding-bottom: 1.5rem;
+    font-style: oblique;
+  }
+  
+  .header-row th {
+    border: solid;
+    font-size: large;
+  }
+  
+  .display-rows {
+    background-color: rgb(170, 179, 179);
+  }
+  
+  .display-rows td {
+    border: 1px solid;
+  }
+  
+  .delete-button {
+    border: solid rgb(15, 15, 15);
+    background-color: rgb(129, 82, 74);
+    display: flex;
+    font-weight: lighter;
+    border-radius: 10px;
+    margin-left: 0.5rem;
+    padding: 0.2rem;
+  }

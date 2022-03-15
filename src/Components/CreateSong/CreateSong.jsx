@@ -32,29 +32,41 @@ const CreateSong = (props) => {
 
     return (  
 
-    <form onSubmit = {handleSubmit}>
         <div>
-            <label htmlFor = 'Title'>Title</label>
-            <input type = 'text' id = 'Title' placeholder = 'Song Title' value={songTitle} onChange={(event) => setTitle(event.target.value)}/> 
+        <h2 className='addSong-title'>Add A Song Below</h2>
+        <div className='create-container'>
+            <form onSubmit = {handleSubmit}>
+                <div className='form-contain'>
+                    <div>
+                        <label className='form-label' htmlFor = 'Title'>Title:</label>
+                        <input type = 'text' id = 'Title' placeholder = 'add text' value={songTitle} onChange={(event) => setTitle(event.target.value)}/> 
+                    </div>
+                    <div>
+                        <label className='form-label' htmlFor = 'Artist'>Artist:</label>
+                        <input type = 'text' id = 'Artist' placeholder = 'add text' value = {songArtist} onChange={(event) => setArtist(event.target.value)}/>
+                    </div>
+                    <div>
+                        <label className='form-label' htmlFor = 'Album'>Album:</label>
+                        <input type = 'text' id = 'Album' placeholder = 'add text' value={songAlbum} onChange={(event) => setAlbum(event.target.value)}/> 
+                    </div>
+                    <div>
+                        <label className='form-label' htmlFor = 'Genre'>Genre:</label>
+                        <input type = 'text' id = 'Genre' placeholder = 'add text' value = {songGenre} onChange={(event) => setGenre(event.target.value)}/>
+                    </div>
+                    <div>
+                        <label className='form-label' htmlFor = 'Release'>Release Date:</label>
+                        <input type = 'date' id = 'Release' placeholder = 'Release Date' value = {releaseDate} onChange={(event) => setReleaseDate(event.target.value)}/>
+                    </div>
+
+                </div> 
+                <div className='button-contain'> 
+                    <div>
+                        <button type = 'submit' className='add-button'>Add Song</button> 
+                    </div>
+                </div>  
+            </form>
         </div>
-        <div>
-            <label htmlFor = 'Artist'>Artist</label>
-            <input type = 'text' id = 'Artist' placeholder = 'Artist Name' value = {songArtist} onChange={(event) => setArtist(event.target.value)}/>
-        </div>
-        <div>
-            <label htmlFor = 'Album'>Album</label>
-            <input type = 'text' id = 'Album' placeholder = 'Album title' value={songAlbum} onChange={(event) => setAlbum(event.target.value)}/> 
-        </div>
-        <div>
-            <label htmlFor = 'Release'>Release Date</label>
-            <input type = 'date' id = 'Release' placeholder = 'Release Date' value = {releaseDate} onChange={(event) => setReleaseDate(event.target.value)}/>
-        </div>
-        <div>
-            <label htmlFor = 'Genre'>Genre</label>
-            <input type = 'text' id = 'Genre' placeholder = 'Genre' value = {songGenre} onChange={(event) => setGenre(event.target.value)}/>
-        </div>
-        <button type = 'submit'>Submit</button> 
-    </form>
+    </div>
     );
 }
  

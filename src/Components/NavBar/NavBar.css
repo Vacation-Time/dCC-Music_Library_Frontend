@@ -8,5 +8,8 @@
 
   .header {
     color: rgb(189, 101, 20); 
+    align-items: center;
+    display: flex;
+    margin-left: 30rem;
   }
   

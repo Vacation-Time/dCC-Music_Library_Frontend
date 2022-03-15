@@ -36,10 +36,10 @@ function App() {
 
 
   return (
-    <div>
+    <div className='page-container'>
       <div><NavBar/></div>
-      <div><DisplaySongs displaySong={songs}/></div> 
-      <div><CreateSong addNewSong={createSong}/></div>
+      <div><DisplaySongs displaySongs = {songs} deleteSongProp = {deleteSong}/></div> 
+      <div className='content-wrap'><CreateSong addNewSong={createSong}/></div>
     </div>
   );
 }
