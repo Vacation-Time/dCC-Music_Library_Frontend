@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './DisplaySong.css';
+import {Button} from 'react-bootstrap';
 
 const DisplaySongs = (props) => {
 
@@ -43,7 +44,8 @@ const DisplaySongs = (props) => {
                     <td>{song.album}</td>
                     <td>{song.release_date}</td>
                     <td>{song.genre}</td>
-                    <td><button type = 'submit' className ='delete-button' onClick={() => props.deleteSongProp(song)}>Delete Song</button></td>
+                    <td><Button type = 'delete' variant="outline-danger" size="sm" onClick={() => props.deleteSongProp(song)}>Delete</Button></td> 
+                    {/*need to add hover/click change effect for delete button*/}
                 </tr>
             )
             })}

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './CreateSong.css';
+import {Button} from 'react-bootstrap';
+
 
 
 const CreateSong = (props) => {
@@ -17,7 +19,7 @@ const CreateSong = (props) => {
             "title": songTitle,
             "artist": songArtist,
             "album": songAlbum,
-            "date": releaseDate,
+            "release_date": releaseDate,
             "genre": songGenre
         }
         
@@ -33,40 +35,42 @@ const CreateSong = (props) => {
     return (  
 
         <div>
-        <h2 className='addSong-title'>Add A Song Below</h2>
+        <h2 className='addSong-title'>Add A Song Here</h2>
         <div className='create-container'>
             <form onSubmit = {handleSubmit}>
                 <div className='form-contain'>
                     <div>
-                        <label className='form-label' htmlFor = 'Title'>Title:</label>
-                        <input type = 'text' id = 'Title' placeholder = 'add text' value={songTitle} onChange={(event) => setTitle(event.target.value)}/> 
+                        <label className='form-label' htmlFor = 'Title'></label>
+                        <input type = 'text' id = 'Title' placeholder = 'Title:' value={songTitle} onChange={(event) => setTitle(event.target.value)}/> 
                     </div>
                     <div>
-                        <label className='form-label' htmlFor = 'Artist'>Artist:</label>
-                        <input type = 'text' id = 'Artist' placeholder = 'add text' value = {songArtist} onChange={(event) => setArtist(event.target.value)}/>
+                        <label className='form-label' htmlFor = 'Artist'></label>
+                        <input type = 'text' id = 'Artist' placeholder = 'Artist:' value = {songArtist} onChange={(event) => setArtist(event.target.value)}/>
                     </div>
                     <div>
-                        <label className='form-label' htmlFor = 'Album'>Album:</label>
-                        <input type = 'text' id = 'Album' placeholder = 'add text' value={songAlbum} onChange={(event) => setAlbum(event.target.value)}/> 
+                        <label className='form-label' htmlFor = 'Album'></label>
+                        <input type = 'text' id = 'Album' placeholder = 'Album:' value={songAlbum} onChange={(event) => setAlbum(event.target.value)}/> 
                     </div>
                     <div>
-                        <label className='form-label' htmlFor = 'Genre'>Genre:</label>
-                        <input type = 'text' id = 'Genre' placeholder = 'add text' value = {songGenre} onChange={(event) => setGenre(event.target.value)}/>
+                        <label className='form-label' htmlFor = 'Genre'></label>
+                        <input type = 'text' id = 'Genre' placeholder = 'Genre:' value = {songGenre} onChange={(event) => setGenre(event.target.value)}/>
                     </div>
                     <div>
-                        <label className='form-label' htmlFor = 'Release'>Release Date:</label>
+                        <label className='form-label' htmlFor = 'Release'></label>
                         <input type = 'date' id = 'Release' placeholder = 'Release Date' value = {releaseDate} onChange={(event) => setReleaseDate(event.target.value)}/>
                     </div>
 
-                </div> 
+
+                </div>            
                 <div className='button-contain'> 
                     <div>
-                        <button type = 'submit' className='add-button'>Add Song</button> 
+                    <Button variant="outline-primary" type='submit'>Add Song</Button>{' '}
                     </div>
                 </div>  
             </form>
         </div>
     </div>
+    
     );
 }
  

@@ -6,25 +6,27 @@ import './App.css';
 import axios from 'axios';
 
 
+
 function App() {
 
   const [songs, setSongs] = useState([]); // where data is stored
+  const apiLink="http://127.0.0.1:8000/api/music/";
 
   useEffect(() => { // gets list os songs when form is used
     getAllSongs();
   },[])
 
   async function getAllSongs(){
-    let response = await axios.get('http://127.0.0.1:8000/api/music/');
+    let response = await axios.get(apiLink);
     setSongs(response.data);
     //console.log(response.data); // to view in console for testing
   } 
 
-  async function createSong(newSong){ 
-    let response = await axios.post('http://127.0.0.1:8000/api/music/', newSong);
-    console.log(response.data); // to view in console for testing
-    await getAllSongs();
-  
+  async function createSong(newSong){
+    let response = await axios.post(apiLink, newSong);
+    if(response.status === 201){
+      await getAllSongs();
+    }
   }
   
   async function deleteSong(song){
@@ -39,7 +41,7 @@ function App() {
     <div className='page-container'>
       <div><NavBar/></div>
       <div><DisplaySongs displaySongs = {songs} deleteSongProp = {deleteSong}/></div> 
-      <div className='content-wrap'><CreateSong addNewSong={createSong}/></div>
+      <div><CreateSong addNewSong={createSong}/></div>
     </div>
   );
 }

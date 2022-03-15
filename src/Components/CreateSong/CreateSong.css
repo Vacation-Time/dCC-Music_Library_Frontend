@@ -1,13 +1,13 @@
 .create-container {
     display: flex;
     max-width: 1200px;
-    margin-right: 8rem;
-    margin-left: 5rem;
+    margin-right: 3rem;
+    margin-left: 20rem;
     margin-bottom: 3rem;
     flex-direction: column;
-    border: solid;
+    /* border: solid; */
     border-radius: 10px;
-    background-color: rgb(94, 61, 116);
+    /* background-color: rgb(94, 89, 89); */
     padding-top: 0rem;
   }
   
@@ -15,14 +15,17 @@
     margin-top: 1rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    margin-left: 17.5rem;
-    padding-left: 0.5rem;
+    /* margin-left: 17.5rem;
+    padding-left: 3.5rem; */
+    justify-content: center;
+    display: flex;
   }
   
   .form-contain {
     display: flex;
     padding-top: 1rem;
     padding-left: .5rem;
+    justify-content: center;
   }
   
   .form-label {
