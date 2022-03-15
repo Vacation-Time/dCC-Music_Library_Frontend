@@ -10,29 +10,28 @@ function App() {
 
   const [songs, setSongs] = useState([]); // where data is stored
 
-  useEffect(() => {
+  useEffect(() => { // gets list os songs when form is used
     getAllSongs();
-    createSong();
-    updateSong();
-  })
+  },[])
 
   async function getAllSongs(){
     let response = await axios.get('http://127.0.0.1:8000/api/music/');
     setSongs(response.data);
-    console.log(response.data); // to view in console for testing
+    //console.log(response.data); // to view in console for testing
   } 
 
   async function createSong(newSong){ 
     let response = await axios.post('http://127.0.0.1:8000/api/music/', newSong);
     console.log(response.data); // to view in console for testing
-    //await getAllSongs();
+    await getAllSongs();
   
   }
   
-  async function updateSong(songData, songId){
-    let response = await axios.put(`http://127.0.0.1:8000/api/music/${songId}`, songData);
-    console.log(response.data); // to view in console for testing
-    //await getAllSongs();
+  async function deleteSong(song){
+    let response = await axios.delete(`http://127.0.0.1:8000/api/music/${song.id}/`);
+   if(response.status === 200){
+    await getAllSongs();
+  }
   }
 
 
